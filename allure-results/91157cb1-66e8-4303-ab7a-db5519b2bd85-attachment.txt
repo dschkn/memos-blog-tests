@@ -1,0 +1,23 @@
+{
+  "actions": [
+    {
+      "id": "action20",
+      "type": "pointer",
+      "parameters": {
+        "pointerType": "mouse"
+      },
+      "actions": [
+        {
+          "type": "pointerMove",
+          "button": 0,
+          "x": 0,
+          "y": 0,
+          "duration": 100,
+          "origin": {
+            "element-6066-11e4-a52e-4f735466cecf": "2b183341-4576-40d8-a25f-161244c29f7e"
+          }
+        }
+      ]
+    }
+  ]
+}

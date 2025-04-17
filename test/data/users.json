@@ -1,0 +1,31 @@
+[
+    {
+        "id": 0,
+        "username": "masterUser",
+        "password": "masterPassword"
+    },
+    {
+        "id": 1,
+        "username": "firstUser",
+        "password": "firstPassword"
+    },
+    {
+        "id": 2,
+        "username": "secondUser",
+        "password": "secondPassword"
+    },
+    {
+        "id": 3,
+        "username": "thirdUser",
+        "password": "thirdPassword"
+    },
+    {
+        "id": 4,
+        "username": "fourthUser",
+        "password": "fourthPassword"
+    }
+
+
+
+
+]

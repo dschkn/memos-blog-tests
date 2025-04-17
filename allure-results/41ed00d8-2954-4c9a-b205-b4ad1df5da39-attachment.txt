@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".w-full.min-w-full"
+}

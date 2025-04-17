@@ -1,0 +1,146 @@
+[
+    { 
+      "id": 1, 
+      "text": "# Heading 1", 
+      "validation": {
+        "tag": "h1",
+        "classes": ["text-5xl", "font-bold", "leading-normal"],
+        "css": {
+          "font-size": "3rem",
+          "font-weight": "700",
+          "line-height": "1"
+        }
+      }
+    },
+    { 
+      "id": 2, 
+      "text": "## Heading 2", 
+      "validation": {
+        "tag": "h2",
+        "classes": ["text-3xl", "font-medium", "leading-normal"],
+        "css": {
+          "font-size": "1.875rem",
+          "font-weight": "500",
+          "line-height": "2.25rem"
+        }
+      }
+    },
+    {
+      "id": 3, 
+      "text": "### Heading 3", 
+      "validation": {
+        "tag": "h3",
+        "classes": ["text-xl", "font-medium", "leading-normal"],
+        "css": {
+          "font-size": "1.25rem",
+          "font-weight": "500",
+          "line-height": "1.75rem"
+        }
+      }
+    },
+    {
+      "id": 4, 
+      "text": "#### Heading 4", 
+      "validation": {
+        "tag": "h4",
+        "classes": ["font-bold"],
+        "css": {
+          "font-weight": "700"
+        }
+      }
+    },
+    {
+      "id": 5, 
+      "text": "##### Heading 5", 
+      "validation": {
+        "tag": "h5",
+        "classes": [],
+        "css": {}
+      }
+    },
+    {
+      "id": 6, 
+      "text": "###### Heading 6", 
+      "validation": {
+        "tag": "h6",
+        "classes": [],
+        "css": {}
+      }
+    },
+    { 
+      "id": 7, 
+      "text": "- Item 1", 
+      "validation": {} 
+    },
+    { 
+      "id": 8, 
+      "text": "- Item 2", 
+      "validation": {} 
+    },
+    { 
+      "id": 9, 
+      "text": "  - Item 2.1", 
+      "validation": {} 
+    },
+    { 
+      "id": 10, 
+      "text": "  - Item 2.2", 
+      "validation": {} 
+    },
+    { 
+      "id": 11, 
+      "text": "*Italic*", 
+      "validation": {} 
+    },
+    { 
+      "id": 12, 
+      "text": "**Bold**", 
+      "validation": {} 
+    },
+    { 
+      "id": 13, 
+      "text": "~~Strikethrough~~", 
+      "validation": {} 
+    },
+    { 
+      "id": 14, 
+      "text": "[Memos](https://usememos.com)", 
+      "validation": {} 
+    },
+    { 
+      "id": 15, 
+      "text": "<https://usememos.com>", 
+      "validation": {} 
+    },
+    { 
+      "id": 16, 
+      "text": "![Memos](https://www.usememos.com/full-logo-landscape.png)", 
+      "validation": {} 
+    },
+    { 
+      "id": 17, 
+      "text": "```javascript const x = 1;```", 
+      "validation": {} 
+    },
+    { 
+      "id": 20, 
+      "text": "> Blockquote", 
+      "validation": {} 
+    },
+    { 
+      "id": 22, 
+      "text": "==text==", 
+      "validation": {} 
+    },
+    { 
+      "id": 23, 
+      "text": "||text||", 
+      "validation": {} 
+    },
+    { 
+      "id": 24, 
+      "text": "![[memos/memoid]]", 
+      "validation": {} 
+    }
+  ]
+  
