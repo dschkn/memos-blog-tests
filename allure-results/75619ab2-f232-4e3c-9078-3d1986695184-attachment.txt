@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": ".//span[normalize-space(text()) = \"Heading 6\"] | .//span[not(.//span[normalize-space(text()) = \"Heading 6\"]) and normalize-space() = \"Heading 6\"]"
+}

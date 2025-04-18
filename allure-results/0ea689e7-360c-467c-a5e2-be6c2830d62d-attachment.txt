@@ -1,0 +1,53 @@
+{
+  "script": "<script> [152 bytes]",
+  "args": [
+    {
+      "sessionId": "f048e394-b195-4c35-b3d6-905d58b9c87b",
+      "elementId": "ee15067a-5bde-4a2d-a634-328af8ac3dfc",
+      "element-6066-11e4-a52e-4f735466cecf": "ee15067a-5bde-4a2d-a634-328af8ac3dfc",
+      "selector": "//h5[span=\"Heading 5\"]",
+      "parent": {
+        "sessionId": "f048e394-b195-4c35-b3d6-905d58b9c87b",
+        "elementId": "3b851e32-cc89-4c32-8a7a-137f069acb4d",
+        "element-6066-11e4-a52e-4f735466cecf": "3b851e32-cc89-4c32-8a7a-137f069acb4d",
+        "selector": ".group.relative",
+        "parent": {
+          "sessionId": "f048e394-b195-4c35-b3d6-905d58b9c87b",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "137.0.2",
+            "moz:accessibilityChecks": false,
+            "moz:buildID": "20250414091429",
+            "moz:geckodriverVersion": "0.36.0",
+            "moz:headless": false,
+            "moz:platformVersion": "20.6.0",
+            "moz:processID": 12899,
+            "moz:profile": "/var/folders/d1/bvbww6ps4xq8f5_2mggjh7g40000gn/T/rust_mozprofile12ksl0",
+            "moz:shutdownTimeout": 60000,
+            "moz:webdriverClick": true,
+            "moz:windowless": false,
+            "pageLoadStrategy": "normal",
+            "platformName": "mac",
+            "proxy": {},
+            "setWindowRect": true,
+            "strictFileInteractability": false,
+            "timeouts": {
+              "implicit": 0,
+              "pageLoad": 300000,
+              "script": 30000
+            },
+            "unhandledPromptBehavior": "dismiss and notify",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0",
+            "wdio:enforceWebDriverClassic": true,
+            "wdio:driverPID": 12898
+          }
+        },
+        "isReactElement": false,
+        "isShadowElement": false
+      },
+      "isReactElement": false,
+      "isShadowElement": false
+    }
+  ]
+}
