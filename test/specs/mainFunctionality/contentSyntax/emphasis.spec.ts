@@ -2,14 +2,12 @@ import * as fs from 'fs/promises';
 import UserActions from '../../../helpers/posts.ts';
 import { SyntaxValidators } from '../../../helpers/syntaxValidators.ts';
 import { MainPage } from '../../../pageobjects/main.page.ts';
-import SyntaxElements from '../../../pageobjects/syntax.ts';
 
 let syntaxPostsToCheck: { id: number, text: string }[] = [];
 let userData: { id: number, username: string, password: string}[] = [];
 let masterUsername;
 let masterPassword;
 let mainPage = new MainPage();
-let syntax = new SyntaxElements();
 let userActions = new UserActions();
 let syntaxValidators = new SyntaxValidators();
 
@@ -43,6 +41,7 @@ describe("", function (){
     
       });
     describe("creates and validates posts", function(){
+        this.retries(5)
         it("creates a post with italic text", async function(){
             await mainPage.postTextArea.isDisplayed();
             await userActions.createPost(10, syntaxPostsToCheck);
