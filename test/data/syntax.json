@@ -78,40 +78,105 @@
         }
       }
     },
-    { 
-      "id": 6, 
-      "text": "- Item 1", 
-      "validation": {} 
-    },
-    { 
+    {
+      "id": 6,
+      "text": "- Item 1 with '-'",
+      "validation": {
+        "tag": "ul",
+        "css": {
+          "list-style-type": "disc",
+          "list-style-position": "outside",
+          "padding-left": "1rem"
+        },
+        "children": [
+          {
+            "tag": "li",
+            "text": "Item 1"
+          }
+        ]
+      }
+    }
+    ,
+    {
       "id": 7, 
-      "text": "- Item 2", 
-      "validation": {} 
-    },
-    { 
+      "text": "* Item 2 with '*'", 
+      "validation": {
+        "tag": "ul",
+        "css": {
+          "list-style-type": "disc",
+          "list-style-position": "outside",
+          "padding-left": "1rem"
+        },
+        "children": [
+          {
+            "tag": "li",
+            "text": "Item 1"
+          }
+        ]
+      }
+    }
+    ,
+    {
       "id": 8, 
-      "text": "  - Item 2.1", 
-      "validation": {} 
-    },
+      "text": "+ Item 3 with '+'", 
+      "validation": {
+        "tag": "ul",
+        "css": {
+          "list-style-type": "disc",
+          "list-style-position": "outside",
+          "padding-left": "1rem"
+        },
+        "children": [
+          {
+            "tag": "li",
+            "text": "Item 1"
+          }
+        ]
+      }
+    }
+    ,
     { 
       "id": 9, 
-      "text": "  - Item 2.2", 
+      "text": "", 
       "validation": {} 
     },
     { 
       "id": 10, 
-      "text": "*Italic*", 
-      "validation": {} 
+      "text": "*Post with Italic Text*", 
+      "validation": {
+        "property": {
+        "property": "font-style",
+        "value": "italic",
+        "parsed": { "type": "ident", "string": "italic" }
+        }
+      }
     },
-    { 
-      "id": 11, 
-      "text": "**Bold**", 
-      "validation": {} 
+    {
+      "id": 11,
+      "text": "**Post with Bold Text**",
+      "validation": {
+        "property": {
+          "property": "font-weight",
+          "value": 700,
+          "parsed": {
+            "type": "number",
+            "string": "700",
+            "value": 700,
+            "unit": ""
+          }
+        }
+      }
     },
-    { 
-      "id": 12, 
-      "text": "~~Strikethrough~~", 
-      "validation": {} 
+    {
+      "id": 12,
+      "text": "~~Post with Strikethrough Text~~",
+      "validation": {
+        "property": {
+          "property": "text-decoration",
+          "value": "line-through solid rgb(156, 163, 175)",
+          "parsed": {}
+        }
+      }
     },
     { 
       "id": 13, 

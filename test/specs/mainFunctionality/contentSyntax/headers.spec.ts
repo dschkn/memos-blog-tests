@@ -1,4 +1,4 @@
-import { SyntaxElements } from '../../../pageobjects/syntax.ts';
+import SyntaxElements from '../../../pageobjects/syntax.ts';
 import * as fs from 'fs/promises';
 import UserActions from '../../../helpers/posts.ts'
 import { MainPage } from '../../../pageobjects/main.page.ts';

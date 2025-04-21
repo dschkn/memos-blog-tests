@@ -16,30 +16,21 @@ export default class UserActions{
 }
   async createPost(postIndex: number, postsData: any[]){ 
     const mainPage = new MainPage();
-    
     const postText = postsData[postIndex]?.text;
-  
     if (!postText) {
       throw new Error(`❌ No post data for index ${postIndex}`);
     }
-  
     // Получаем количество постов ДО добавления
-    // const beforeCount = (await mainPage.allPostsOnPage).length;
-  
     await mainPage.postTextArea.waitForExist();
     await mainPage.postTextArea.setValue(postText);
-  
     await mainPage.savePostButton.waitForClickable();
     await mainPage.savePostButton.click();
-  
   }
 
 
   async createAndVerifyPost(postIndex: number, postsData: any[]) { // ЭТот метод надо срефакторить используя this.createPost()
     const mainPage = new MainPage();
-    
     const postText = postsData[postIndex]?.text;
-  
     if (!postText) {
       throw new Error(`❌ No post data for index ${postIndex}`);
     }

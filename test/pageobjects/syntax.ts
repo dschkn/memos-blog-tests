@@ -1,6 +1,6 @@
 import { MainPage } from './main.page'
 
-export class SyntaxElements extends MainPage{
+export default class SyntaxElements extends MainPage{
     get heading1(){
         return this.oneSinglePostOnPage.$(".text-5xl")
     }
@@ -19,6 +19,18 @@ export class SyntaxElements extends MainPage{
     get heading6() {
         return this.oneSinglePostOnPage.$('//span[text()="Heading 6"]/parent::h6');
     } 
+
+    get italicPost() {
+        return this.oneSinglePostOnPage.$('//p[contains(., "Post with Italic Text")]');
+    }
+    get boldPost() {
+        return this.oneSinglePostOnPage.$('//p[contains(., "Post with Bold Text")]');
+    }
+    get strikethroughPost() {
+        return this.oneSinglePostOnPage.$('//p[contains(., "Post with Strikethrough Text")]');
+    }
+      
+    
     
     
     

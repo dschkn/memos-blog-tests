@@ -95,6 +95,7 @@ describe("Checking security of users and their posts", async function() {
             });
 
             it('verifies that all posts are public and there are no private posts', async function() {
+                await mainPage.oneSinglePostOnPage.waitForDisplayed();
                 const posts = await mainPage.allPostsOnPage;
                 const allPostTexts = await Promise.all(
                     await posts.map((post) => post.getText())
