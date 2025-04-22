@@ -40,7 +40,7 @@ describe("", function (){
         await mainPage.login(masterUsername, masterPassword);
     
       });
-    describe("creates and validates posts", function(){
+    describe("creates and validates emphasis posts", function(){
         this.retries(5)
         it("creates a post with italic text", async function(){
             await mainPage.postTextArea.isDisplayed();

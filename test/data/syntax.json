@@ -181,21 +181,35 @@
     { 
       "id": 13, 
       "text": "[Memos](https://usememos.com)", 
-      "validation": {} 
+      "validation": {
+        "link": "https://usememos.com",
+        "tag": "a",
+        "internaltext": "Memos"
+      } 
     },
     { 
       "id": 14, 
       "text": "<https://usememos.com>", 
-      "validation": {} 
+      "validation": {
+        "link": "https://usememos.com",
+        "tag": "a",
+        "internaltext": "https://usememos.com",
+        "alt": "Memos"
+      }
     },
     { 
       "id": 15, 
       "text": "![Memos](https://www.usememos.com/full-logo-landscape.png)", 
-      "validation": {} 
+      "validation": {
+        "link": "https://usememos.com",
+        "tag": "img",
+        "src": "https://www.usememos.com/full-logo-landscape.png",
+        "alt": "Memos"
+      } 
     },
     { 
       "id": 16, 
-      "text": "```javascript const x = 1;```", 
+      "text": "`javascript const x = 1;`", 
       "validation": {} 
     },
     { 

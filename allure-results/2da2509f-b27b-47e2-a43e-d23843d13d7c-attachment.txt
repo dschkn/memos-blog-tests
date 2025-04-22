@@ -1,0 +1,53 @@
+{
+  "script": "<script> [152 bytes]",
+  "args": [
+    {
+      "sessionId": "7c9d4fb7-953e-432c-9b98-c33573e7bbb6",
+      "elementId": "a47a8c15-65fb-4070-b1e5-d084237bd6f0",
+      "element-6066-11e4-a52e-4f735466cecf": "a47a8c15-65fb-4070-b1e5-d084237bd6f0",
+      "selector": "//p[contains(., \"Memos\")]",
+      "parent": {
+        "sessionId": "7c9d4fb7-953e-432c-9b98-c33573e7bbb6",
+        "elementId": "6dab4a98-24aa-4890-bdf5-df859acefa83",
+        "element-6066-11e4-a52e-4f735466cecf": "6dab4a98-24aa-4890-bdf5-df859acefa83",
+        "selector": ".group.relative",
+        "parent": {
+          "sessionId": "7c9d4fb7-953e-432c-9b98-c33573e7bbb6",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "137.0.2",
+            "moz:accessibilityChecks": false,
+            "moz:buildID": "20250414091429",
+            "moz:geckodriverVersion": "0.36.0",
+            "moz:headless": false,
+            "moz:platformVersion": "20.6.0",
+            "moz:processID": 57039,
+            "moz:profile": "/var/folders/d1/bvbww6ps4xq8f5_2mggjh7g40000gn/T/rust_mozprofileabTAj8",
+            "moz:shutdownTimeout": 60000,
+            "moz:webdriverClick": true,
+            "moz:windowless": false,
+            "pageLoadStrategy": "normal",
+            "platformName": "mac",
+            "proxy": {},
+            "setWindowRect": true,
+            "strictFileInteractability": false,
+            "timeouts": {
+              "implicit": 0,
+              "pageLoad": 300000,
+              "script": 30000
+            },
+            "unhandledPromptBehavior": "dismiss and notify",
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:137.0) Gecko/20100101 Firefox/137.0",
+            "wdio:enforceWebDriverClassic": true,
+            "wdio:driverPID": 57038
+          }
+        },
+        "isReactElement": false,
+        "isShadowElement": false
+      },
+      "isReactElement": false,
+      "isShadowElement": false
+    }
+  ]
+}

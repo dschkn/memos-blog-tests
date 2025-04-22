@@ -29,6 +29,20 @@ export default class SyntaxElements extends MainPage{
     get strikethroughPost() {
         return this.oneSinglePostOnPage.$('//p[contains(., "Post with Strikethrough Text")]');
     }
+    get linkWithText(){
+        return this.oneSinglePostOnPage.$('//p[contains(., "Memos")]');
+    }
+
+    get linkWithoutText(){
+        return this.oneSinglePostOnPage.$('//p[contains(., "https://usememos.com")]');
+    }
+
+    get linkWithPict(){
+        return this.oneSinglePostOnPage.$('p')
+
+        ;
+    }
+
       
     
     
