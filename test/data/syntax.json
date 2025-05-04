@@ -207,16 +207,40 @@
         "alt": "Memos"
       } 
     },
-    { 
-      "id": 16, 
-      "text": "`javascript const x = 1;`", 
-      "validation": {} 
-    },
-    { 
-      "id": 17, 
-      "text": "> Blockquote", 
-      "validation": {} 
-    },
+    {
+      "id": 16,
+      "text": "`javascript const x = 1;`",
+      "validation": {
+        "tag": "code",
+        "styles": {
+          "font-family": "ui-monospace, sfmono-regular, menlo, monaco, consolas, liberation mono, courier new, monospace",
+          "font-size": "14px",
+          "line-height": "20px",
+          "padding-left": "4px",
+          "padding-right": "4px",
+          "border-radius": "4px",
+          "opacity": 0.8,
+          "background-color": "rgb(63,63,70)"
+        }
+      }
+    },    
+    {
+      "id": 17,
+      "text": "> Blockquote",
+      "validation": {
+        "tag": "blockquote",
+        "styles": {
+          "padding-left": "4px",
+          "padding-right": "4px",
+          "padding-top": "0px",
+          "padding-bottom": "0px",
+          "border-inline-start-width": "0px",
+          "border-radius": "4px",
+          "background-color": ["rgb(229,231,235)", "rgb(63,63,70)"],
+          "border-color": ["rgb(107,114,128)", "rgb(229,231,235)"]
+        }
+      }
+    },    
     { 
       "id": 18, 
       "text": "==text==", 

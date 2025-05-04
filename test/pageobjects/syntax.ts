@@ -38,10 +38,18 @@ export default class SyntaxElements extends MainPage{
     }
 
     get linkWithPict(){
-        return this.oneSinglePostOnPage.$('p')
-
-        ;
+        return this.oneSinglePostOnPage.$('p');
     }
+
+    get codeBlock() {
+        return this.oneSinglePostOnPage.$(`//*[contains(text(), 'javascript const x = 1;')]`);
+    }
+
+    get blockQuote() {
+        return this.oneSinglePostOnPage.$(`//*[contains(text(), 'Blockquote')]/../..`);
+
+    }
+    
 
       
     

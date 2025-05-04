@@ -1,6 +1,5 @@
 import UserActions from '../../../helpers/posts.ts';
 import SyntaxElements from '../../../pageobjects/syntax.ts';import * as fs from 'fs/promises';
-import { SyntaxValidators } from '../../../helpers/syntaxValidators.ts';
 import { MainPage } from '../../../pageobjects/main.page.ts';
 
 let syntaxPostsToCheck: Array<{ id: number, text: string, [key: string]: any }> = [];
@@ -11,7 +10,6 @@ let masterPassword;
 let mainPage = new MainPage();
 let syntax = new SyntaxElements();
 let userActions = new UserActions();
-let syntaxValidators = new SyntaxValidators();
 
 
 describe("", function (){
