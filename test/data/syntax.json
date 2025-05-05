@@ -255,5 +255,17 @@
       "id": 20, 
       "text": "![[memos/memoid]]", 
       "validation": {} 
+    },
+    {
+      "id": 21,
+      "textline1": "```mermaid",
+      "textline2": "graph TD;",
+      "textline3": "    A-->B;",
+      "textline4": "    A-->C;",
+      "textline5": "    B-->D;",
+      "textline6": "    C-->D;",
+      "textline7": "```",
+      "validation": {} 
+
     }
   ]

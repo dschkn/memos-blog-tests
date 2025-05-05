@@ -27,6 +27,37 @@ export default class UserActions{
     await mainPage.savePostButton.click();
   }
 
+  async typePostLineByLine(postId: number, postsData: any[]) {
+    const mainPage = new MainPage();
+    const postObject = postsData.find(p => p.id === postId);
+  
+    if (!postObject) {
+      throw new Error(`❌ No post found with id ${postId}`);
+    }
+  
+    // Собираем и сортируем строки textline1, textline2, ...
+    const lines = Object.keys(postObject)
+      .filter(key => key.startsWith("textline"))
+      .sort((a, b) => {
+        const numA = parseInt(a.replace("textline", ""));
+        const numB = parseInt(b.replace("textline", ""));
+        return numA - numB;
+      })
+      .map(key => postObject[key]);
+  
+    await mainPage.postTextArea.waitForExist();
+    await mainPage.postTextArea.click(); // На всякий случай фокус
+  
+    for (const line of lines) {
+      await browser.keys(line);
+      await browser.keys("Enter"); // Эмулируем настоящий Enter
+    }
+  
+    await mainPage.savePostButton.waitForClickable();
+    await mainPage.savePostButton.click();
+  }
+  
+
 
   async createAndVerifyPost(postIndex: number, postsData: any[]) { // ЭТот метод надо срефакторить используя this.createPost()
     const mainPage = new MainPage();
