@@ -1,0 +1,15 @@
+{
+  "script": "<script> [612 bytes]",
+  "args": [
+    {
+      "element-6066-11e4-a52e-4f735466cecf": "fab54d2c-ec58-4130-a15e-c8c1f60b9790",
+      "ELEMENT": "fab54d2c-ec58-4130-a15e-c8c1f60b9790"
+    },
+    {
+      "withinViewport": false,
+      "contentVisibilityAuto": true,
+      "opacityProperty": true,
+      "visibilityProperty": true
+    }
+  ]
+}

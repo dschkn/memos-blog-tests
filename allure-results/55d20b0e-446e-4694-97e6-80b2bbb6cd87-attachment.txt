@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "span.text-sm.max-w-[256px].truncate.cursor-pointer*=Musterdokument.pdf"
+}
