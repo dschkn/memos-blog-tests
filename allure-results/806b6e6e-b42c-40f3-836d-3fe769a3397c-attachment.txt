@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "link[rel=\"localization\"][href=\"toolkit/pdfviewer/viewer.ftl\"]"
+}

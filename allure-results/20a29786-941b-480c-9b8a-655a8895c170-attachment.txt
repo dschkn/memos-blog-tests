@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "link[rel=\"stylesheet\"][href=\"resource://pdf.js/web/viewer.css\"]"
+}

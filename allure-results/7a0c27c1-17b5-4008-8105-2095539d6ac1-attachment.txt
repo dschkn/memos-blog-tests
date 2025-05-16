@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "script[src=\"resource://pdf.js/web/viewer.mjs\"]"
+}

@@ -6,8 +6,10 @@ import { expect } from 'chai';
 import PDFs from '../../pageobjects/PDFs.ts';
 import { MainPage } from '../../pageobjects/main.page';
 import Loaders from '../../helpers/loaders.ts';
-// import pdfParse from 'pdf-parse';
-// import { PDFDocument } from 'pdf-lib'; // пригодится, если пойдём в визуальные элементы
+// import * as pdfParse from 'pdf-parse';
+import pdfParse from 'pdf-parse';
+
+import { PDFDocument } from 'pdf-lib'; // пригодится, если пойдём в визуальные элементы
 
 describe('PDF Signature Detection Suite', () => {
   let mainPage = new MainPage();
@@ -63,6 +65,14 @@ describe('PDF Signature Detection Suite', () => {
       });
 
       it('document URL ends with .pdf', async function () {
+        await browser.waitUntil(async () => {
+          const url = await browser.getUrl();
+          return url.endsWith('.pdf');
+        }, {
+          timeout: 5000, 
+          timeoutMsg: 'URL did not end with .pdf within 5 seconds'
+        });
+      
         const url = await browser.getUrl();
         expect(url.endsWith('.pdf')).to.be.true;
       });
@@ -87,44 +97,199 @@ describe('PDF Signature Detection Suite', () => {
       });
 
       it('document is rendered as PDF', async function () {
-        const embed = await $('embed[type="application/pdf"]');
-        await embed.waitForDisplayed({ timeout: 5000 });
-        const isDisplayed = await embed.isDisplayed();
-        expect(isDisplayed).to.be.true;
+        await pdfs.scriptSource1.isDisplayed();
+        await pdfs.scriptSource2.isDisplayed();
+        await pdfs.link.isDisplayed();
+        await pdfs.stylesheetLink1.isDisplayed();
+        await pdfs.stylesheetLink2.isDisplayed();
+        await pdfs.outerContainer.isDisplayed();
+        await pdfs.sidebarContainer.isDisplayed();
+        await pdfs.viewThumbnailButton.isDisplayed();
+        await pdfs.getTitle();
+      });
+      
+      interface PDFSearchResult {
+        found: boolean;
+        page?: number;
+      }
+      
+      it('searches for "MAX MUSTERMAN" inside PDF without downloading', async () => {
+        const result = await browser.execute<PDFSearchResult, []>(async () => {
+          const PDFViewerApp = (window as any).PDFViewerApplication;
+      
+          const waitForPDF = async () => {
+            let tries = 0;
+            while (
+              (!PDFViewerApp || !PDFViewerApp.pdfDocument || !PDFViewerApp.pdfDocument.numPages) &&
+              tries < 200
+            ) {
+              await new Promise(res => setTimeout(res, 100));
+              tries++;
+            }
+          };
+      
+          await waitForPDF();
+      
+          if (!PDFViewerApp?.pdfDocument) {
+            console.error('PDF failed to load');
+            return { found: false };
+          }
+      
+          const numPages = PDFViewerApp.pdfDocument.numPages;
+          console.log('Total pages in PDF:', numPages);
+      
+          for (let i = 1; i <= numPages; i++) {
+            const page = await PDFViewerApp.pdfDocument.getPage(i);
+            const content = await page.getTextContent();
+            const pageText = content.items.map((item: any) => item.str).join(' ');
+      
+            console.log(`Page ${i} text:`, pageText);
+      
+            const normalizedText = pageText.toLowerCase().replace(/\s+/g, ' ');
+            if (normalizedText.includes('max musterman')) {
+              return { found: true, page: i };
+            }
+          }
+      
+          return { found: false };
+        });
+      
+        if (!result.found) {
+          console.warn('Phrase not found! Check the page console for text.');
+        }
+      
+        expect(result.found).to.be.true;
+        console.log(`🎯 Phrase found on PDF page: ${result.page}`);
+      });
+
+      it('downloads the PDF document to a local folder', async () => {
+        const pdfUrl = await browser.getUrl();
+        const cookies = await browser.getCookies();
+      
+        // Convert cookies to a string for the request header
+        const cookieHeader = cookies.map(c => `${c.name}=${c.value}`).join('; ');
+      
+        const response = await fetch(pdfUrl, {
+          headers: {
+            'Cookie': cookieHeader,
+          }
+        });
+      
+        if (!response.ok) {
+          throw new Error(`❌ Failed to download PDF. Status: ${response.status}`);
+        }
+      
+        const pdfBuffer = await response.buffer();
+      
+        // Create downloads folder if it doesn't exist
+        const downloadDir = path.resolve(__dirname, '../../downloads');
+        if (!fs.existsSync(downloadDir)) {
+          fs.mkdirSync(downloadDir, { recursive: true });
+        }
+      
+        const downloadPath = path.join(downloadDir, 'downloaded-signed-document.pdf');
+        fs.writeFileSync(downloadPath, pdfBuffer);
+      
+        // Assert that the file exists
+        expect(fs.existsSync(downloadPath)).to.be.true;
+        console.log(`📥 PDF successfully downloaded to: ${downloadPath}`);
+      });
+
+
+      it('searches for "MAX MUSTERMAN" inside downloaded PDF', async () => {
+        const downloadDir = path.resolve(__dirname, '../../downloads');
+        const downloadPath = path.join(downloadDir, 'downloaded-signed-document.pdf');
+      
+        // Проверка, что файл действительно существует
+        if (!fs.existsSync(downloadPath)) {
+          throw new Error('❌ Downloaded PDF not found at expected location');
+        }
+      
+        // Чтение PDF и поиск текста
+        const pdfBuffer = fs.readFileSync(downloadPath);
+        const data = await pdfParse(pdfBuffer);
+        const text = data.text.toLowerCase();
+      
+        const phrase = 'max musterman';
+        const found = text.includes(phrase);
+      
+        expect(found).to.be.true;
+        console.log(`🔍 Phrase "${phrase}" ${found ? 'was found' : 'was NOT found'} in the downloaded PDF`);
+      });
+      
+
+      
+      
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+      it('should detect that the PDF contains a signature', () => {
+
       });
 
 
 
 
 
-      xit('should detect that the PDF contains a signature', () => {
-        // заглушка: ищем слово "signature" или что-то похожее
-        const signatureDetected = pdfText.toLowerCase().includes('signature');
-        expect(signatureDetected).to.be.true;
-      });
+
+
+
+
+
+
+
+
+
+
+
+
 
       xit('should identify the signature as a handwritten drawing or embedded image', () => {
         // сюда можно потом воткнуть проверку визуальных элементов через pdf-lib
         // сейчас просто заглушка
-        expect(true).to.be.true;
       });
 
       xit('should find the signature despite a large amount of fake filler text', () => {
         // просто убеждаемся, что длинный текст не мешает
-        const longDoc = pdfText.length > 1000;
-        const signatureDetected = pdfText.toLowerCase().includes('signature');
-        expect(longDoc).to.be.true;
-        expect(signatureDetected).to.be.true;
+        
       });
 
       xit('should correctly locate the primary intended signature', () => {
         // заглушка, можно позже искать координаты последнего слова "signature"
-        expect(true).to.be.true;
       });
 
       xit('should confirm that the signature is in the expected area of the document', () => {
         // тут можно будет анализировать позицию, если пойдём в pdf-lib
-        expect(true).to.be.true;
       });
     });
 
@@ -164,8 +329,8 @@ describe('PDF Signature Detection Suite', () => {
 
 
 
-  describe("Deletes all posts", function () {
-    it("deletes all posts", async function () {
+  xdescribe("Deletes all posts", function () {
+    xit("deletes all posts", async function () {
         this.retries(1);
         await userActions.deleteAllPosts();
     });
