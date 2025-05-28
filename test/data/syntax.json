@@ -137,7 +137,7 @@
     ,
     { 
       "id": 9, 
-      "text": "", 
+      "text": "$x^2 + y^2 = z^2$", 
       "validation": {} 
     },
     { 
@@ -267,5 +267,11 @@
       "textline7": "```",
       "validation": {} 
 
+    },
+    {
+      "id": 22,
+      "textline1": "$$",
+      "textline2": "x^2 + y^2 = z^2",
+      "textline3": "$$"
     }
   ]

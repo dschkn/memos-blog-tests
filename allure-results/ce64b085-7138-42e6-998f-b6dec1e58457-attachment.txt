@@ -1,0 +1,135 @@
+{
+  "actions": [
+    {
+      "id": "action3",
+      "type": "key",
+      "parameters": {},
+      "actions": [
+        {
+          "type": "keyDown",
+          "value": "x"
+        },
+        {
+          "type": "keyDown",
+          "value": "^"
+        },
+        {
+          "type": "keyDown",
+          "value": "2"
+        },
+        {
+          "type": "keyDown",
+          "value": " "
+        },
+        {
+          "type": "keyDown",
+          "value": "+"
+        },
+        {
+          "type": "keyDown",
+          "value": " "
+        },
+        {
+          "type": "keyDown",
+          "value": "y"
+        },
+        {
+          "type": "keyDown",
+          "value": "^"
+        },
+        {
+          "type": "keyDown",
+          "value": "2"
+        },
+        {
+          "type": "keyDown",
+          "value": " "
+        },
+        {
+          "type": "keyDown",
+          "value": "="
+        },
+        {
+          "type": "keyDown",
+          "value": " "
+        },
+        {
+          "type": "keyDown",
+          "value": "z"
+        },
+        {
+          "type": "keyDown",
+          "value": "^"
+        },
+        {
+          "type": "keyDown",
+          "value": "2"
+        },
+        {
+          "type": "pause",
+          "duration": 10
+        },
+        {
+          "type": "keyUp",
+          "value": "x"
+        },
+        {
+          "type": "keyUp",
+          "value": "^"
+        },
+        {
+          "type": "keyUp",
+          "value": "2"
+        },
+        {
+          "type": "keyUp",
+          "value": " "
+        },
+        {
+          "type": "keyUp",
+          "value": "+"
+        },
+        {
+          "type": "keyUp",
+          "value": " "
+        },
+        {
+          "type": "keyUp",
+          "value": "y"
+        },
+        {
+          "type": "keyUp",
+          "value": "^"
+        },
+        {
+          "type": "keyUp",
+          "value": "2"
+        },
+        {
+          "type": "keyUp",
+          "value": " "
+        },
+        {
+          "type": "keyUp",
+          "value": "="
+        },
+        {
+          "type": "keyUp",
+          "value": " "
+        },
+        {
+          "type": "keyUp",
+          "value": "z"
+        },
+        {
+          "type": "keyUp",
+          "value": "^"
+        },
+        {
+          "type": "keyUp",
+          "value": "2"
+        }
+      ]
+    }
+  ]
+}

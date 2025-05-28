@@ -1,0 +1,12 @@
+[
+  {
+    "name": "memos.access-token",
+    "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoiIiwiaXNzIjoibWVtb3MiLCJzdWIiOiIyIiwiYXVkIjpbInVzZXIuYWNjZXNzLXRva2VuIl0sImV4cCI6NDkwMTE3NjEwNiwiaWF0IjoxNzQ3NTc2MTA2fQ.GfkJ1x4PApCJaAQbwQHGhOfwsyi2gV7_Tr6yJUqN-UI",
+    "path": "/",
+    "domain": "memos.ds.badhouseplants.net",
+    "secure": true,
+    "httpOnly": true,
+    "expiry": 1782136107,
+    "sameSite": "None"
+  }
+]

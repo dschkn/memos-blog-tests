@@ -3,13 +3,14 @@ import * as fs from 'fs';
 import * as path from 'path';
 import UserActions from '../../helpers/posts.ts';
 import { expect } from 'chai';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
 import PDFs from '../../pageobjects/PDFs.ts';
 import { MainPage } from '../../pageobjects/main.page';
 import Loaders from '../../helpers/loaders.ts';
 // import * as pdfParse from 'pdf-parse';
 import pdfParse from 'pdf-parse';
 
-import { PDFDocument } from 'pdf-lib'; // пригодится, если пойдём в визуальные элементы
+import { PDFDocument, PDFName, PDFDict, PDFRef } from 'pdf-lib'; // пригодится, если пойдём в визуальные элементы
 
 describe('PDF Signature Detection Suite', () => {
   let mainPage = new MainPage();
@@ -246,16 +247,20 @@ describe('PDF Signature Detection Suite', () => {
 
 
 
-
-
-
-
-
-
-
-      it('should detect that the PDF contains a signature', () => {
-
+      it('should dump all text and images found in the PDF', async () => {
+        
       });
+      
+
+
+
+
+
+      xit('should detect that the PDF contains a signature image', async () => {
+        
+      });
+      
+      
 
 
 

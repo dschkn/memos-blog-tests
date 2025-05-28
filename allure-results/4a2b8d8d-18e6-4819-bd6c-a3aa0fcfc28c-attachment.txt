@@ -1,0 +1,3 @@
+{
+  "text": "/Users/dmitriishchukin/Documents/Source/memos/test/data/Musterdokument.pdf"
+}

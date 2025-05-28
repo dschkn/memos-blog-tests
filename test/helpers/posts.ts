@@ -14,18 +14,19 @@ export default class UserActions{
     await mainPage.savePostButton.isClickable();
     await mainPage.savePostButton.click();
 }
-  async createPost(postIndex: number, postsData: any[]){ 
-    const mainPage = new MainPage();
-    const postText = postsData[postIndex]?.text;
-    if (!postText) {
-      throw new Error(`❌ No post data for index ${postIndex}`);
-    }
-    // Получаем количество постов ДО добавления
-    await mainPage.postTextArea.waitForExist();
-    await mainPage.postTextArea.setValue(postText);
-    await mainPage.savePostButton.waitForClickable();
-    await mainPage.savePostButton.click();
+async createPost(postId: number, postsData: any[]) {
+  const mainPage = new MainPage();
+  const post = postsData.find((p) => p.id === postId);
+
+  if (!post?.text) {
+    throw new Error(`❌ No post data found for id ${postId}`);
   }
+
+  await mainPage.postTextArea.waitForExist();
+  await mainPage.postTextArea.setValue(post.text);
+  await mainPage.savePostButton.waitForClickable();
+  await mainPage.savePostButton.click();
+}
 
   async typePostLineByLine(postId: number, postsData: any[]) {
     const mainPage = new MainPage();
